@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* 1. Configuramos la tipografía Lexend como la base (Es legible y moderna) */
+:root {
+  font-family: 'Lexend', sans-serif;
+  /* Un color crema/grisáceo muy sutil que descansa la vista */
+  background-color: #f8f8f7; 
+  color: #171717;
+}
+
+/* 2. Limpieza básica para evitar comportamientos extraños */
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow: hidden; /* Evita scrolls accidentales en toda la app */
+}
+
+/* 3. Aseguramos que el contenedor de React ocupe todo el ancho */
+#root {
+  width: 100%;
+}
+
+/* 4. Estilo personalizado para el checkbox (opcional pero recomendado) */
+input[type="checkbox"] {
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* 5. Suavizado de fuentes para que se vean mejor en pantallas de alta resolución */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+@keyframes sutil-balanceo {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-2px) rotate(1deg); }
+}
+
+@keyframes picoteo {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.3); origin: top; }
+}
+
+.animacion-pollito {
+  animation: sutil-balanceo 3s ease-in-out infinite;
+}
+
+.animacion-pico {
+  animation: picoteo 2s ease-in-out infinite;
+}
